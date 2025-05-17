@@ -1,0 +1,15 @@
+hdfs dfs -mkdir -p /hadoop/input
+hdfs namenode -format -force
+sbin/start-all.sh
+sbin/mr-jobhistory-daemon.sh start historyserver
+hdfs dfs -mkdir -p /hadoop/input
+sudo tar xvf oozie-sharelib-4.3.0.tar.gz
+hdfs dfs -mkdir -p /hadoop/share
+hdfs dfs -mkdir -p /hadoop/project
+hdfs dfs -put workflow.xml /hadoop/project/
+hadoop com.sun.tools.javac.Main *.java
+jar cf project.jar *.class
+hdfs dfs -mkdir -p /hadoop/project/lib
+hdfs dfs -put project.jar /hadoop/project/lib/
+oozie job -oozie http://localhost:11000/oozie -config job.properties -run
+hdfs dfs -get /hadoop/project/output output
