@@ -1,8 +1,3 @@
-/**
- * @author: LIN TANG
- * @since: 2017-04-10 10:59:42 AM
- * @description: the most common reason for flight cancellations. Reducer
- */
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,7 +38,6 @@ public class CancellationsReducer extends Reducer<Text, IntWritable, Text, Text>
 				}
 			});
 			Entry<String, Integer> entry = list.get(0);
-			//A = carrier, B = weather, C = NAS, D = security
 			boolean flag = false;
 			if("A".equals(entry.getKey())){
 				flag =true;
