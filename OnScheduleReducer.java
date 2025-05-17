@@ -1,9 +1,3 @@
-/**
- * @author: LIN TANG
- * @since: 2017-04-10 10:59:42 AM
- * @description: the 3 airlines with the highest and lowest probability, respectively, for being on
- *					schedule; Reducer
- */
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,7 +34,6 @@ public class OnScheduleReducer extends Reducer<Text, Text, Text, Text> {
 		
 		List<Entry<String, Double>> list = new ArrayList<Entry<String, Double>>(map.entrySet());  
 		Collections.sort(list,new Comparator<Map.Entry<String, Double>>() {  
-            // Sorted in decreasing order  
             public int compare(Entry<String, Double> o1, Entry<String, Double> o2) {  
                 return o2.getValue().compareTo(o1.getValue());  
             }  
