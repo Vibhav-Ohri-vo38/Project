@@ -1,9 +1,3 @@
-/**
- * @author: LIN TANG
- * @since: 2017-04-10 10:59:42 AM
- * @description: the 3 airports with the longest and shortest average taxi time per flight (both in and
- *					out), respectively. Reducer
- */
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
